@@ -1,0 +1,159 @@
+/* Styling for the body */
+body {
+    font-family: Arial, sans-serif;
+    background-color: #ffffff;
+    color: #333;
+    margin: 0;
+    padding: 20px;
+}
+
+/* Navigation styles */
+nav {
+    background-color: #333;
+    color: #fff;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 1rem 2rem;
+    margin-bottom: 20px;
+    height: 20px;
+}
+
+nav .logo a {
+    color: #fff;
+    font-size: 1.5rem;
+    text-decoration: none;
+    font-weight: bold;
+}
+
+nav .nav-links {
+    list-style: none;
+    display: flex;
+}
+
+nav .nav-links li {
+    margin-left: 2rem;
+}
+
+nav .nav-links a {
+    color: #fff;
+    text-decoration: none;
+    font-size: 1rem;
+    transition: color 0.3s;
+}
+
+nav .nav-links a:hover {
+    color: #f39c12; /* Change color on hover */
+}
+
+nav #logo {
+    height: 50px; /* Adjust height as needed */
+    width: auto;  /* Maintain aspect ratio */
+    padding-right: 50px;
+}
+
+/* Main content styling (optional) */
+main {
+    padding: 2rem;
+}
+
+/* Styling for the div with id 'gay' */
+#gay {
+    background-color: #ffd700;
+    padding: 20px;
+    border-radius: 8px;
+    margin-bottom: 20px;
+    text-align: center;
+}
+
+#gay h1 {
+    color: #ff4500;
+    font-size: 2.5em;
+    border: 2px solid #ff4500;  /* Corrected border property */
+    margin: 0;
+}
+
+#gay p {
+    font-size: 1.2em;
+    margin: 10px 0 0 0;
+}
+
+/* Style gay choices */
+
+#radio {
+    display: flex;
+    flex-wrap: wrap;
+    margin-top: 1rem;
+    align-content: center;
+    align-items: center;
+}
+
+#radio label {
+    margin-right: 1rem;
+}
+
+#submit-bttn {
+    margin-top: 1rem;
+}
+
+/* style-blog */
+
+#blog {
+
+}
+
+#blog div p {
+    padding-left: 2.5rem;
+}
+
+#blog div h4 {
+    padding-left: 1rem;
+}
+
+/* Styling for the div with class 'input' */
+.form-container {
+    background-color: #add8e6;
+    padding: 20px;
+    border-radius: 8px;
+    margin-bottom: 20px;
+}
+
+.input {
+
+}
+
+.input h2 {
+    color: #000080;
+    margin: 0 0 10px 0;
+}
+
+.input label {
+    margin-top: 2rem;
+
+}
+
+.input input {
+    padding: 10px;
+    font-size: 1em;
+    width: 100%;
+    box-sizing: border-box;
+    margin-top: 1rem;
+    margin-bottom: 1rem;
+}
+
+
+
+/* General styling for paragraphs */
+p {
+    font-size: 1.1em;
+    line-height: 1.6;
+    margin: 10px 0;
+}
+
+/* Styling for the image */
+img {
+    width: 100%; /* Set the desired width with % for flexible resizing */
+    height: auto; /* Maintain aspect ratio */
+    display: block;
+    margin: 20px auto; /* Center the image */
+}
