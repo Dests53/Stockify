@@ -1,0 +1,11 @@
+#age {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+
+}
+
+#age p {
+    text-align: center;
+    padding-left: 1rem;
+}
