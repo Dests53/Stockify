@@ -157,3 +157,14 @@ img {
     display: block;
     margin: 20px auto; /* Center the image */
 }
+#box{
+    position: absolute;
+    border: 5px solid;
+    border-color: white;
+    height:375px;
+    width: 350px;
+    position: fixed;
+    bottom: 130px;
+
+    position: fixed;
+}

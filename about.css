@@ -4,10 +4,11 @@
 }
 
 body {
-    display:flex;
+    display: flex;
     flex-direction: column;
     justify-items: center;
     align-items: center;
+    
 }
 
 #age {
@@ -117,4 +118,9 @@ body {
     align-self: center;
 }
 
+body{
 
+    background-image: url(dota-2-logo-8nnsx5c1zd4uqi4x.jpg);
+    background-repeat: no-repeat;
+    background-size:cover ;
+}
