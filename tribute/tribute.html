@@ -1,71 +1,145 @@
 <!DOCTYPE html>
+<!-- 
+This is Benn to Dests
+- Do not simply Nest <> html tag unless you know you need it 
+- Divide element properly (different topic goes into different divider)
+- Use class and id properly by not abuse it
+- Class are for multiple elements that need to be style
+- Use id when the element is special or work with javascript in the future
+- Html is like a node tree & css is the thing that search the node tree element and style it
 
+Suggestion: 
+- Format your docs (always)
+
+-->
 <html>
-
-<head>
+  <head>
     <title>Ayana Taketatsu</title>
+    <!-- START -->
+    <!-- CORS Warning: DO NOT CHANGE to SUS LINK -->
+    <!-- Change typeface-->
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&display=swap"
+      rel="stylesheet"
+    />
+    <!-- SOURCE: https://fonts.google.com/selection/embed -->
+    <!-- CORS DOCS:https://developer.mozilla.org/en-US/docs/Web/HTTP/CORS -->
+    <!-- END -->
     <link rel="stylesheet" href="tribute.css" />
-</head>
-<body>
-    
+    <link rel="stylesheet" href="roboto-font.css" />
+  </head>
+  <body class="roboto-regular">
+    <h1>Ayana Taketatsu</h1>
 
-    <h1 id="ayac"> Ayana Taketatsu </h1>
-
-    <div id="img">
-
-        <img id="img" src="379867240_805374818257564_5671201130726071031_n.jpg">
-
-        <small id="caption"><h1> Ayana Taketatsu is a Japanese voice actress for anime industry <br> <br></h1></small>
-
+    <div class="hero">
+      <img src="https://cdn.myanimelist.net/images/voiceactors/1/80900.jpg" />
+      <p>Ayana Taketatsu is a Japanese voice actress for anime industry</p>
     </div>
 
-    <div class="ayana">
+    <div class="about">
+      <h2>About Ayana Taketatsu</h2>
 
-        <h1 id="Ayachi">About Ayana Taketatsu</h1>
-
+      <div class="bullet">
         <p>
-            ☛ She attended Nihon Narration Engi Kenkyujo, a voice actor training school before becoming affiliated with then management company. She is now affiliated with Link Plan. Due to her sharp vocal tones, she often voices tsundere characters (although she has voiced other mysterious or flirtatious characters). Taketatsu formed a singing unit Petit Milady alongside Aoi Yūki in 2013.Taketatsu left the talent agency Assemble Heart for the agency Link Plan on January 1, 2017.<br><br>
-
-            ☛ On her 30th birthday in 2019, she announced on Twitter that she married fellow voice actor Yuki Kaji. <br> <br>
-
-            ☛  On June 30, 2022, Taketatsu and Kaji announced that they were expecting their first child together.On November 3, 2022, she announced the birth of her daughter. <br><br>
-
-            <b>Notable Characters:</b> <br>
-
-            <img id="nino" src="thumb-1920-1131999.png">
-            <img id="kei" src="keikaruizawa-848ef-3928475371.jpeg">
-            <img id="Azusa" src="Azusa_Nakano_new_mugshot.webp">
-            <img id="Nagisa" src="bd4ebe9def8e112ab39b43509e01ef92.jpg">
-            <img id="Sugoha" src="xgwhebw-1.jpg">
-            <img id="Kotori" src="5e162da24d426a528299d4c927cd9852.jpg">
-            <img id="Chiori" src="Genshin-Impact-Chiori-materials,-kit,-and-Constellations-cover.webp">
-            *Nino Nakano<br> 
-            *Azusa Nakano<br>
-            *Kei Karuizawa<br>
-            *Natsunagi, Nagisa<br>
-            *Sugoha Kazuto<br>
-            *Kotori Itsuka<br>
-            *Chiori<br>
-            
+          ☛ She attended Nihon Narration Engi Kenkyujo, a voice actor training
+          school before becoming affiliated with then management company. She is
+          now affiliated with Link Plan.
+        </p>
+        <p>
+          ☛ Due to her sharp vocal tones, she often
+          voices tsundere characters
+          <i
+            >(although she has voiced other mysterious or flirtatious
+            characters)</i
+          >.
+        </p>
+        <p>
+          ☛ Taketatsu formed a singing unit Petit Milady alongside <a href="https://myanimelist.net/people/6686/Aoi_Yuuki">Aoi Yuuki</a> in
+          2013.
 
         </p>
-       
 
-        
+        <p>
+          ☛ Taketatsu left the talent agency Assemble Heart for the agency
+          Link Plan on January 1, 2017.
+        </p>
+
+        <p>
+          ☛ On her 30th birthday in 2019, she announced on Twitter that she
+          married fellow voice actor <a href="https://myanimelist.net/people/672/Yuuki_Kaji" >Yuuki Kaji</a>.
+        </p>
+
+        <p>
+          ☛ On June 30, 2022, Taketatsu and Kaji announced that they were
+          expecting their first child together.On November 3, 2022, she
+          announced the birth of her daughter.
+        </p>
+      </div>
+
+      <div class="">
+        <h2>Notable Characters:</h2>
+
+        <div class="roles">
+          <div class="character">
+            <img
+              src="https://cdn.myanimelist.net/r/84x124/images/characters/7/437011.webp?s=798c9da1b495c80f36a551e71216e8ef"
+            />
+            <p>Nakano Nino</p>
+          </div>
+          <div class="character">
+            <img
+              src="https://cdn.myanimelist.net/r/84x124/images/characters/7/539083.webp?s=7576af5658d88516995bdfcc1d606488"
+            />
+            <p>Kei Karuizawa</p>
+          </div>
+          <div class="character">
+            <img
+              src="https://cdn.myanimelist.net/r/84x124/images/characters/5/496889.webp?s=627dc089b629ce2c5baa37cffedb6960"
+            />
+            <p>Hazeworth Anri</p>
+          </div>
+          <div class="character">
+            <img
+              src="https://cdn.myanimelist.net/r/84x124/images/characters/13/467980.webp?s=43bc6e0207386904a3802ab3f50e088b"
+            />
+            <p>Irving Amelia</p>
+          </div>
+          <div class="character">
+            <img
+              src="https://cdn.myanimelist.net/r/84x124/images/characters/7/488688.webp?s=b411daac4a78337b5bad2716b66a434c"
+            />
+            <p>Asai Ami</p>
+          </div>
+          <div class="character">
+            <img
+              src="https://cdn.myanimelist.net/r/84x124/images/characters/16/211505.webp?s=ea0a4ba1301ea6480bb831f6729ea71a"
+            />
+            <p>Itsuka Kotori</p>
+          </div>
+          <div class="character">
+            <img
+              src="https://cdn.myanimelist.net/r/84x124/images/characters/6/446679.webp?s=5c709a5b6f96e1fc43786e91056d9f55"
+            />
+            <p>Natsunagi Nagisa</p>
+          </div>
+          <div class="character">
+            <img
+              src="https://cdn.myanimelist.net/r/84x124/images/characters/8/452529.webp?s=3793f1afa9f28189bb1d3bfd735f11d5"
+            />
+            <p>Kamiya Karen</p>
+          </div>
+        </div>
+
+        <div class="bottom">
+          <p>Do you like my work?</p>
+          <div>
+            <p>Rate it:</p>
+            <button id="like">Like</button>
+          </div>
+        </div>
+      </div>
     </div>
-    
-
-
-</body>
-
-
-
-
-
-</div>
-
-
-
-
-
+  </body>
 </html>

@@ -1,0 +1,18 @@
+.first,.last{
+    width: 100px;
+display:inline-block
+}
+
+.email{
+    width: 300;
+    margin-top: 10px;
+    display: block;
+}
+
+.sign{
+    margin-top: 10px;
+    display: block;
+    background-color: rgb(59, 153, 241);
+    color: white;
+    width: 350px;
+}

@@ -1,0 +1,59 @@
+.container {
+    display: grid;
+    grid-template-columns: auto 1fr;
+    align-items: center;
+}
+
+nav #logo {
+    height: 50px; /* Adjust height as needed */
+    width: auto;  /* Maintain aspect ratio */
+    margin-right: 10px;
+    margin-top: 5px;
+}
+.Logo, .comms{
+    display: inline;
+    display: flex;
+}
+
+.comms{
+    font-size: 20px;
+    color: #cf7208;
+    margin-bottom: 20px;
+}
+
+
+nav .nav-links {
+    list-style: none;
+    display: flex;
+}
+nav .nav-links li {
+    margin-left: 10px;
+    color: #f39c12;
+}
+
+nav {
+    background-color: #140f09cb;
+    color: #fff;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 1rem;
+    margin-bottom: 20px;
+    height: 20px;
+}
+
+nav .nav-links a:hover {
+    color: #f39c12; /* Change color on hover */
+}
+
+nav .nav-links a {
+    color: #cf7208;
+    text-decoration: none;
+    font-size: 1rem;
+    transition: color 0.3s;
+}
+
+nav .nav-links button {
+    border-color: #22b0d2;
+    background-color: #ffffff;
+}

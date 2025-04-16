@@ -1,144 +1,187 @@
 
-*{
-    
+/* Basic programming 101 (You need to have this skill)
+- Group your shit together!!!
+- Write Human readable code because you team need to read it (also you in the future) !!
+- No repeating yourself unless NECESSARY
+- Write self Documentting code (the name of the const is the this it does)
+*/
+
+/* This is Benn (my wisdom after all the year of keyboard pressing) : 
+- Always write good code because you are going to read it in the future and you will be cringe about what you done
+- STOP adding SHIT into your code when you find things not going your way
+- Start removing shit from your code when thing not going way
+- Use your Google (google search everything) 
+- People ask you not to Google are idots don't talk to them
+- READ THE DOCS (go read the docs)
+*/
+
+/* Remove default Browser style */
+* {
     margin: 0;
-
     padding: 0;
-}
-body {
-
+  }
+  
+  /* Const in CSS */
+  
+  :root {
+    --img-rad: 50%;
+  }
+  
+  /* Step 1:  Style using this first */
+  /* General Styling (Style everythings <> html tag) tis also remeves browser defaults */
+  
+  body {
+    display: flex;
+    flex-direction: column;
     background-color: #ffffff;
-    margin: 20%;
-   
+    margin: 0 10% 10% 10%;
     background-repeat: no-repeat;
-
     background-size: cover;
-
-}
-
-h1 {
+  }
+  
+  h1 {
     text-align: center;
-
-}
-
-
-#ayac {
-    text-align: center;   
-}
-
-#img{
-    display: inline-block;
-   
-    width: 500px;
-
-    height:500px;
-
-    margin-left: 250px;
-
-    
-}
-
-#Ayachi{
-
+    font-size: 2.441rem; /* typography scale */
+  }
+  
+  h2 {
+    font-size: 24px;
+    text-align: left;
+    font-size: 1.953rem; /* typography scale (designing skill -- learn tis in future)  */
+  }
+  
+  p {
+    font-size: 1rem; /* typography scale */
+    /* border: black solid 3px; */
+  }
+  
+  a {
+    text-decoration: none; /* Remove underline */
+    color: inherit; /* Keep the original text color */
+    font-weight: bold;
+  }
+  
+  a:hover {
+    color: red; /* Change text color to red on hover */
+    font-weight: bold; /* Make text bold on hover */
+  }
+  
+  
+  /* Step 2 : Style using class */
+  /* Use classes all the time so you can reuse the code */
+  
+  .hero {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+  }
+  
+  .hero img {
+    width: 300px;
+    height: 300px;
+    border-radius: var(--img-rad);
+    object-fit: cover; /* this so the image don't wrap */
+  }
+  
+  .hero p {
+    max-width: 430px;
+    word-wrap: break-word;
     text-align: center;
-
-}
-
-#caption  {
-    text-align: center; 
-    
-    margin-left: 500px;
-
-    left: 500px;
-    
-    
-}
-
-p{
-
-    font-size: 25px;
-
-    border: black solid 3px;
-}
-
-#nino{
-
-    float: right;
-
-    height: 100px;
+    font-size: 24px;
+  }
+  
+  .about {
+    display: flex;
+    flex-direction: column;
+  }
+  
+  .about h2 {
+    padding: 16px 0;
+  }
+  
+  .bullet {
+    display: flex;
+    flex-direction: column;
+    padding: 16px 16px;
+  }
+  
+  .bullet p {
+    padding-bottom: 16px;
+    word-wrap: break-word;
+  }
+  
+  .roles {
+    display: flex;
+    flex-direction: row;
+    overflow: scroll;
+  }
+  
+  .character {
+    margin: 0 16px;
+  }
+  
+  .character img {
     width: 100px;
-
-    margin-right: 525px;
-    margin-bottom: 20px;
-    border-radius: 100px;
-   padding: 1px;
-}
-
-#Chiori{
-
-    float: right;
-    
-
     height: 100px;
-    width: 100px;
-    border-radius: 100px;
-}
-
-#kei{
-
-    float: right;
-
-    height: 100px;
-    width: 100px;
-    border-radius: 100px;
-
-    margin-left: 700;
-
-
-
-}
-
-#Azusa{
-
-    float: right;
-    
-
-    height: 100px;
-    width: 100px;
-    border-radius: 100px;
-
-
-}
-
-#Nagisa{
-    float: right;
-    
-
-    height: 100px;
-    width: 100px;
-    border-radius: 100px;
-
-}
-
-#Sugoha{
-    float: right;
-    
-
-    height: 100px;
-    width: 100px;
-    border-radius: 100px;
-
-}
-
-#Kotori{
-    float: right;
-    
-
-    height: 100px;
-    width: 100px;
-    border-radius: 100px;
-
-}
-
-
-
+    border-radius: var(--img-rad);
+    object-fit: cover; /* this so the image don't wrap */
+  }
+  
+  .character p {
+    padding: 6px 0;
+    text-align: center;
+    font-weight: 700;
+  }
+  
+  .character:hover {
+    background-color: hsl(0, 100%, 90%);
+  }
+  
+  .character img:hover {
+    height: 105px;
+    width: 105px;
+  }
+  
+  .bottom {
+    margin: 20px 16px;
+    padding: 20px;
+  }
+  
+  .bottom p {
+    padding-bottom: 16px;
+    word-wrap: break-word;
+  }
+  
+  .bottom div {
+    display: flex;
+    flex-direction: row;
+  }
+  
+  .bottom div p {
+    padding-bottom: 16px;
+    word-wrap: break-word;
+  }
+  
+  .bottom div button {
+    margin: 0px 16px /* this might gets over write by id */
+  }
+  
+  
+  /* Step 4 : ID styling */
+  /* Only use ID if its unique Element that have unique styling and require care */
+  
+  #like {
+    background-color: #4caf50; /* Green background */
+    color: white; /* White text */
+    border: none; /* No border */
+    border-radius: 5px; /* Rounded corners */
+    padding: 10px 20px; /* Padding inside the button */
+    font-size: 16px; /* Text size */
+    cursor: pointer; /* Pointer cursor on hover */
+    transition: background-color 0.3s ease; /* Smooth transition for background color */
+  }
+  
+  #like:hover {
+    background-color: #45a049; /* Darker green on hover */
+  }
+  
