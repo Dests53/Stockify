@@ -1,13 +1,16 @@
-import { useState } from 'react';
-import { FaStar } from 'react-icons/fa';
+import { useState, useContext } from 'react';
+import { AppContext } from '../context/AppContext';
+import RatingStars from './RatingStars';
 
-const ReviewModal = ({ onClose, onSubmit, userRating, setUserRating }) => {
-  const [reviewText, setReviewText] = useState('');
+const ReviewModal = ({ productId, existingReview, onClose, onSubmit }) => {
+  const [rating, setRating] = useState(existingReview?.rating || 0);
+  const [comment, setComment] = useState(existingReview?.comment || '');
+  const { user } = useContext(AppContext);
 
   const handleSubmit = (e) => {
     e.preventDefault();
-    if (userRating > 0) {
-      onSubmit(reviewText);
+    if (rating > 0) {
+      onSubmit(rating, comment);
     }
   };
 
@@ -15,27 +18,35 @@ const ReviewModal = ({ onClose, onSubmit, userRating, setUserRating }) => {
     <div className="modal-overlay">
       <div className="modal-content">
         <div className="modal-header">
-          <h3>Add Your Review</h3>
+          <h3>{existingReview ? 'Update Your Review' : 'Add Your Review'}</h3>
           <button onClick={onClose}>&times;</button>
         </div>
         <form onSubmit={handleSubmit}>
-          <div className="rating-input">
-            {[...Array(5)].map((_, i) => (
-              <FaStar 
-                key={i}
-                className={i < userRating ? 'filled' : ''}
-                onClick={() => setUserRating(i + 1)}
-              />
-            ))}
+          <div className="form-group">
+            <RatingStars 
+              rating={rating} 
+              clickable={true}
+              onStarClick={setRating}
+            />
           </div>
-          <textarea
-            placeholder="Share your thoughts about this product..."
-            value={reviewText}
-            onChange={(e) => setReviewText(e.target.value)}
-            required
-          />
-          <button type="submit" disabled={userRating === 0}>
-            Submit Review
+          <div className="form-group">
+            <textarea
+              placeholder="Share your experience with this product..."
+              value={comment}
+              onChange={(e) => setComment(e.target.value)}
+              required
+            />
+          </div>
+          {!user && (
+            <p className="login-notice">
+              Please login to submit your review
+            </p>
+          )}
+          <button 
+            type="submit" 
+            disabled={rating === 0 || !user}
+          >
+            {existingReview ? 'Update Review' : 'Submit Review'}
           </button>
         </form>
       </div>

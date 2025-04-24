@@ -1,63 +1,49 @@
-import { useState } from 'react';
-import { FaHeart, FaRegHeart, FaStar } from 'react-icons/fa';
-import ReviewModal from '../../../project soft des/ReviewModal';
+import { useContext, useState } from 'react';
+import { Link } from 'react-router-dom';
+import { AppContext } from '../context/AppContext';
+import { FaHeart, FaRegHeart } from 'react-icons/fa';
+import RatingStars from './RatingStars';
+import ReviewModal from './ReviewModal';
 
-const ProductCard = ({ product, onAddToCart }) => {
-  const [isFavorite, setIsFavorite] = useState(false);
+const ProductCard = ({ product }) => {
+  const { toggleFavorite, addReview, user } = useContext(AppContext);
   const [showReviewModal, setShowReviewModal] = useState(false);
-  const [reviews, setReviews] = useState(product.reviews || []);
-  const [userRating, setUserRating] = useState(0);
 
-  const toggleFavorite = () => setIsFavorite(!isFavorite);
-
-  const handleAddReview = (reviewText) => {
-    const newReview = {
-      id: Date.now(),
-      rating: userRating,
-      text: reviewText,
-      user: "Current User",
-      date: new Date().toLocaleDateString()
-    };
-    setReviews([...reviews, newReview]);
-    setShowReviewModal(false);
-    setUserRating(0);
-  };
-
-  const averageRating = reviews.length > 0 
-    ? (reviews.reduce((sum, review) => sum + review.rating, 0) / reviews.length).toFixed(1)
-    : 0;
+  const averageRating = product.reviews.reduce(
+    (acc, review) => acc + review.rating, 0
+  ) / product.reviews.length || 0;
 
   return (
     <div className="product-card">
       <div className="product-image">
-        {product.name} Image
         <button 
-          className={`favorite-btn ${isFavorite ? 'active' : ''}`}
-          onClick={toggleFavorite}
+          className={`favorite-btn ${product.isFavorite ? 'active' : ''}`}
+          onClick={() => toggleFavorite(product.id)}
         >
-          {isFavorite ? <FaHeart /> : <FaRegHeart />}
+          {product.isFavorite ? <FaHeart /> : <FaRegHeart />}
         </button>
+        <Link to={`/product/${product.id}`}>
+          <img src={product.image} alt={product.name} />
+        </Link>
       </div>
-      <h3 className="product-name">{product.name}</h3>
-      <div className="product-price">₱{product.price.toLocaleString()}</div>
-      
-      <div className="product-rating" onClick={() => setShowReviewModal(true)}>
-        {[...Array(5)].map((_, i) => (
-          <FaStar key={i} className={i < averageRating ? 'filled' : ''} />
-        ))}
-        <span>({reviews.length})</span>
+      <div className="product-info">
+        <h3>{product.name}</h3>
+        <div className="price">₱{product.price.toLocaleString()}</div>
+        <RatingStars 
+          rating={averageRating} 
+          reviewCount={product.reviews.length}
+          clickable={true}
+          onStarClick={() => setShowReviewModal(true)}
+        />
+        <button className="add-to-cart">Add to Cart</button>
       </div>
       
-      <button className="add-to-cart" onClick={() => onAddToCart(product)}>
-        Add to Cart
-      </button>
-
       {showReviewModal && (
-        <ReviewModal 
+        <ReviewModal
+          productId={product.id}
+          existingReview={product.reviews.find(r => r.userId === user?.id)}
           onClose={() => setShowReviewModal(false)}
-          onSubmit={handleAddReview}
-          userRating={userRating}
-          setUserRating={setUserRating}
+          onSubmit={addReview}
         />
       )}
     </div>
